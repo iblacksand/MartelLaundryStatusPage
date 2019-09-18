@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Martel Laundry Status Page</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -13,6 +13,7 @@
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/bulma.min.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -23,7 +24,65 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <p>Martel Status Page</p>
+  <section class="section">
+  <div class="container">
+  <h1 class="title has-text-centered">Martel Laundry Status Page</h>
+    <h2 class="subtitle has-text-centered">Check here to see which machines are currently being used!</h2>
+  </div>
+</section>
+
+<section class="section">
+    <div class="columns">
+        <div class="column is-one-fifth">
+          
+            <div class="notification is-danger">
+    
+                <button class="delete"></button>
+                Primar lorem ipsum dolor sit amet, consectetur
+                adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet,
+                consectetur adipiscing elit
+              </div>
+
+        </div>
+
+  </div>
+</section>
+<section class="section">
+
+    
+
+  <div class="container is-centered">
+    <table class="table is-fullwidth">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th><abbr title="Machine Number">No.</abbr></th>
+          <th>Time Remaining</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Washer</td>
+          <td>1</td>
+          <td>Available</td>
+        </tr>
+        <tr>
+            <td>Washer</td>
+            <td>2</td>
+            <td>30m</td>
+          </tr>
+        <tr>
+            <td>Washer</td>
+            <td>3</td>
+            <td><progress class="progress is-primary" max="100">15%</progress></td>
+          </tr>
+        
+      </tbody>
+      </table>
+  </div>
+</section>
+
+
   <script src="js/vendor/modernizr-3.7.1.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
@@ -36,6 +95,16 @@
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
+
+  <script>document.addEventListener('DOMContentLoaded', () => {
+      (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
+        $notification = $delete.parentNode;
+        $delete.addEventListener('click', () => {
+          $notification.parentNode.removeChild($notification);
+        });
+      });
+    });</script>
+
 </body>
 
 </html>
