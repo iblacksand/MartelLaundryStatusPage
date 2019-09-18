@@ -7,13 +7,13 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="apple-touch-icon" href="img/Crest.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" href="/Crest.4042d51b.png">
     <!-- Place favicon.ico in the root directory -->
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/bulma.min.css">
+    <script defer="" src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link rel="stylesheet" href="/normalize.1114379f.css">
+    <link rel="stylesheet" href="/main.c52e0fe2.css">
+    <link rel="stylesheet" href="/bulma.min.9ca170ef.css">
 
     <meta name="theme-color" content="#fafafa">
   </head>
@@ -30,7 +30,7 @@
     <nav class="navbar is-fixed-top is-dark is-transparent" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item">
-          <img src="./img/Crest.png" width="28" height="28">
+          <img src="/Crest.4042d51b.png" width="28" height="28">
         </a>
 
         <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
@@ -44,7 +44,7 @@
           <a class="navbar-item" href="./">
             Status Page
           </a>
-          <a class="navbar-item" href="./Contact.html">
+          <a class="navbar-item" href="/Contact.html">
             Contact Us
           </a>
         </div>
@@ -57,16 +57,16 @@
 
     <section class="section">
       <div class="container">
-        <h1 class="title has-text-centered">Contact Us!</h>
+        <h1 class="title has-text-centered">Contact Us!
           <h2 class="subtitle has-text-centered">Use this form to report a broken machine or if you have questions!</h2>
-      </div>
+      </h1></div>
     </section>
 
     <section id="errorsection" class="section">
         <div class="columns is-centered">
           <div class="column is-two-fifths">
   
-            <div hasemails class="notification is-danger">
+            <div hasemails="" class="notification is-danger">
   
               <button class="delete"></button>
               Sorry, we are experiencing a problem! Please contact us at ***emails*** if you have any questions.
@@ -129,55 +129,50 @@
         </div>
       </div>
 
-    <script src="js/vendor/modernizr-3.7.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+    <script src="/modernizr-3.7.1.min.bf381b5c.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>');</script>
+    <script src="/plugins.7f97feee.js"></script>
+    <script src="/main.fb6bbcaf.js"></script>
 
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-    <script>
-      window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-      ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-    </script>
-    <script src="https://www.google-analytics.com/analytics.js" async></script>
+    <script>window.ga = function () {
+  ga.q.push(arguments);
+};
 
-    <script>document.addEventListener('DOMContentLoaded', () => {
-        (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
-          $notification = $delete.parentNode;
-          $delete.addEventListener('click', () => {
-            $notification.parentNode.removeChild($notification);
-          });
-        });
+ga.q = [];
+ga.l = +new Date();
+ga('create', 'UA-XXXXX-Y', 'auto');
+ga('set', 'transport', 'beacon');
+ga('send', 'pageview');</script>
+    <script src="https://www.google-analytics.com/analytics.js" async=""></script>
+
+    <script>document.addEventListener('DOMContentLoaded', function () {
+  (document.querySelectorAll('.notification .delete') || []).forEach(function ($delete) {
+    $notification = $delete.parentNode;
+    $delete.addEventListener('click', function () {
+      $notification.parentNode.removeChild($notification);
+    });
+  });
+});
+document.addEventListener('DOMContentLoaded', function () {
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0); // Check if there are any navbar burgers
+
+  if ($navbarBurgers.length > 0) {
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function (el) {
+      el.addEventListener('click', function () {
+        // Get the target from the "data-target" attribute
+        var target = el.dataset.target;
+        var $target = document.getElementById(target); // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
       });
-
-      document.addEventListener('DOMContentLoaded', () => {
-
-        // Get all "navbar-burger" elements
-        const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-        // Check if there are any navbar burgers
-        if ($navbarBurgers.length > 0) {
-
-          // Add a click event on each of them
-          $navbarBurgers.forEach(el => {
-            el.addEventListener('click', () => {
-
-              // Get the target from the "data-target" attribute
-              const target = el.dataset.target;
-              const $target = document.getElementById(target);
-
-              // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-              el.classList.toggle('is-active');
-              $target.classList.toggle('is-active');
-
-            });
-          });
-        }
-
-      });
-    </script>
+    });
+  }
+});</script>
 </div>
   </body>
 

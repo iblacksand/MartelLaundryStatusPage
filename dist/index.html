@@ -1,43 +1,246 @@
 <!doctype html>
-<html class="no-js" lang="">
+<html class="no-js has-navbar-fixed-top" lang="">
 
-<head>
-  <meta charset="utf-8">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <title>Martel Laundry Status Page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="manifest" href="/site.webmanifest">
-  <link rel="apple-touch-icon" href="/icon.83aa3da3.png">
-  <!-- Place favicon.ico in the root directory -->
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" href="/icon.83aa3da3.png">
+    <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="/normalize.1114379f.css">
-  <link rel="stylesheet" href="/main.c52e0fe2.css">
+    <link rel="stylesheet" href="/normalize.1114379f.css">
+    <link rel="stylesheet" href="/main.c52e0fe2.css">
+    <link rel="stylesheet" href="/bulma.min.9ca170ef.css">
 
-  <meta name="theme-color" content="#fafafa">
-<script src="/normalize.1114379f.js"></script><script src="/main.c52e0fe2.js"></script><link rel="stylesheet" href="/main.fb6bbcaf.css"></head>
+    <meta name="theme-color" content="#fafafa">
+  <script src="/normalize.1114379f.js"></script><script src="/main.c52e0fe2.js"></script><script src="/bulma.min.9ca170ef.js"></script></head>
 
-<body>
-  <!--[if IE]>
+  <body>
+    <!--[if IE]>
     <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   <![endif]-->
 
-  <!-- Add your site or application content here -->
+    <!-- Add your site or application content here -->
 
-  <h1 class=".title">Martel Status Page
-    <h2 class=".subtitle">Check here to see which machines are currently being used!</h2>
+    <!--Navbar-->
+
+    <nav class="navbar is-fixed-top is-dark is-transparent" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item">
+          <img src="/Crest.4042d51b.png" width="28" height="28">
+        </a>
+
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navMenu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navMenu" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="./">
+            Status Page
+          </a>
+          <a class="navbar-item" href="/Contact.html">
+            Contact Us
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    
+
+
+    <section class="section">
+      <div class="container">
+        <h1 class="title has-text-centered">Martel Laundry Status Page
+          <h2 class="subtitle has-text-centered">Check here to see which machines are currently being used!</h2>
+      </h1></div>
+    </section>
+
+    <section id="errorsection" class="section">
+        <div class="columns is-centered">
+          <div class="column is-two-fifths">
+  
+            <div hasemails="" class="notification is-danger">
+  
+              <button class="delete"></button>
+              Sorry, we are experiencing a problem! Please contact us at ***emails*** if you have any questions.
+            </div>
+  
+          </div>
+  
+        </div>
+      </section>
+
+    <!--Tiles-->
+
+    <section class="section is-centered">
+        <div class="tile is-ancestor is-centered">
+            <div class="tile is-3"></div>
+            <div class="tile is-parent is-3 is-vertical">
+                <div class="tile is-child notification is-primary">
+                    <p class="title has-text-centered">Washers available</p>
+                    <p class="has-text-centered" style="font-size:48pt">12</p>
+                  </div>
+                  <div class="tile is-child notification is-warning">
+                      <p class="title has-text-centered">Next washer available in</p>
+  
+                      <p class="has-text-centered" style="font-size:48pt">0 min</p>
+                  </div>
+            </div>
+            <div class="tile is-parent is-3 is-vertical">
+                <div class="tile is-child notification is-info">
+                    <p class="title has-text-centered">Dryers available</p>
+                    <p class="has-text-centered" style="font-size:48pt">4</p>
+                  </div>
+                  <div class="tile is-child notification is-success">
+                      <p class="title has-text-centered">Next dryer available in</p>
+  
+                      <p class="has-text-centered" style="font-size:48pt">15 mins</p>
+                    </div>
+            </div>
+            <div class="tile is-3"></div>
+        </div>
+      </section>
+
+    
+    <section class="section">
 
 
 
+      <div class="container is-centered">
+        <table class="table is-fullwidth">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th><abbr title="Machine Number">No.</abbr></th>
+              <th>Time Remaining</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Washer</td>
+              <td>1</td>
+              <td>Available</td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>2</td>
+              <td>30m</td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>3</td>
+              <td><progress class="progress is-primary" max="100">15%</progress></td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>3</td>
+              <td><progress class="progress is-primary" max="100">15%</progress></td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>1</td>
+              <td>Available</td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>1</td>
+              <td>Available</td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>1</td>
+              <td>Available</td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>1</td>
+              <td>Available</td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>1</td>
+              <td>Available</td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>1</td>
+              <td>Available</td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>1</td>
+              <td>Available</td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>1</td>
+              <td>Available</td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>1</td>
+              <td>Available</td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>1</td>
+              <td>Available</td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>1</td>
+              <td>Available</td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>1</td>
+              <td>Available</td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>1</td>
+              <td>Available</td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>1</td>
+              <td>Available</td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>1</td>
+              <td>Available</td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>1</td>
+              <td>Available</td>
+            </tr>
+            <tr>
+              <td>Washer</td>
+              <td>1</td>
+              <td>Available</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
 
-  <script src="/modernizr-3.7.1.min.bf381b5c.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>');</script>
-  <script src="/plugins.7f97feee.js"></script>
-  <script src="/main.fb6bbcaf.js"></script>
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>window.ga = function () {
+    <script src="/modernizr-3.7.1.min.bf381b5c.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>');</script>
+    <script src="/plugins.7f97feee.js"></script>
+    <script src="/main.fb6bbcaf.js"></script>
+
+    <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+    <script>window.ga = function () {
   ga.q.push(arguments);
 };
 
@@ -46,7 +249,35 @@ ga.l = +new Date();
 ga('create', 'UA-XXXXX-Y', 'auto');
 ga('set', 'transport', 'beacon');
 ga('send', 'pageview');</script>
-  <script src="https://www.google-analytics.com/analytics.js" async=""></script>
-</h1></body>
+    <script src="https://www.google-analytics.com/analytics.js" async=""></script>
+
+    <script>document.addEventListener('DOMContentLoaded', function () {
+  (document.querySelectorAll('.notification .delete') || []).forEach(function ($delete) {
+    $notification = $delete.parentNode;
+    $delete.addEventListener('click', function () {
+      $notification.parentNode.removeChild($notification);
+    });
+  });
+});
+document.addEventListener('DOMContentLoaded', function () {
+  // Get all "navbar-burger" elements
+  var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0); // Check if there are any navbar burgers
+
+  if ($navbarBurgers.length > 0) {
+    // Add a click event on each of them
+    $navbarBurgers.forEach(function (el) {
+      el.addEventListener('click', function () {
+        // Get the target from the "data-target" attribute
+        var target = el.dataset.target;
+        var $target = document.getElementById(target); // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+      });
+    });
+  }
+});</script>
+
+  </body>
 
 </html>
