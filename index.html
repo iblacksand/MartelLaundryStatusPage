@@ -49,9 +49,17 @@
           </a>
         </div>
       </div>
+      <div class="navbar-end">
+          <div class="navbar-item">
+              <a id="colbutton" class="button is-black is-inverted" onclick="colorblind()">
+                <strong>Toggle Color-Blindness Mode</strong>
+              </a>
+            </div>
+          </div>
+        </div>
     </nav>
 
-    
+
 
 
     <section class="section">
@@ -62,173 +70,180 @@
     </section>
 
     <section id="errorsection" class="section">
-        <div class="columns is-centered">
-          <div class="column is-two-fifths">
-  
-            <div hasemails class="notification is-danger">
-  
-              <button class="delete"></button>
-              Sorry, we are experiencing a problem! Please contact us at ***emails*** if you have any questions.
-            </div>
-  
+      <div class="columns is-centered">
+        <div class="column is-two-fifths">
+
+          <div hasemails class="notification is-danger">
+
+            <button class="delete"></button>
+            Sorry, we are experiencing a problem! Please contact us at ***emails*** if you have any questions.
           </div>
-  
+
         </div>
-      </section>
+
+      </div>
+    </section>
 
     <!--Tiles-->
 
     <section class="section is-centered">
-        <div class="tile is-ancestor is-centered">
-            <div class="tile is-3"></div>
-            <div class="tile is-parent is-3 is-vertical">
-                <div class="tile is-child notification is-primary">
-                    <p class="title has-text-centered">Washers available</p>
-                    <p class="has-text-centered" style="font-size:48pt">12</p>
-                  </div>
-                  <div class="tile is-child notification is-warning">
-                      <p class="title has-text-centered">Next washer available in</p>
-  
-                      <p class="has-text-centered" style="font-size:48pt">0 min</p>
-                  </div>
-            </div>
-            <div class="tile is-parent is-3 is-vertical">
-                <div class="tile is-child notification is-info">
-                    <p class="title has-text-centered">Dryers available</p>
-                    <p class="has-text-centered" style="font-size:48pt">4</p>
-                  </div>
-                  <div class="tile is-child notification is-success">
-                      <p class="title has-text-centered">Next dryer available in</p>
-  
-                      <p class="has-text-centered" style="font-size:48pt">15 mins</p>
-                    </div>
-            </div>
-            <div class="tile is-3"></div>
+      <div class="tile is-ancestor is-centered">
+        <div class="tile is-3"></div>
+        <div class="tile is-parent is-3 is-vertical">
+          <div class="tile is-child notification is-primary">
+            <p class="title has-text-centered">Washers available</p>
+            <p class="has-text-centered" style="font-size:48pt">6</p>
+          </div>
+          <div class="tile is-child notification is-warning">
+            <p class="title has-text-centered">Next washer available in</p>
+
+            <p class="has-text-centered" style="font-size:48pt">0 min</p>
+          </div>
         </div>
-      </section>
+        <div class="tile is-parent is-3 is-vertical">
+          <div class="tile is-child notification is-info">
+            <p class="title has-text-centered">Dryers available</p>
+            <p class="has-text-centered" style="font-size:48pt">0</p>
+          </div>
+          <div class="tile is-child notification is-success">
+            <p class="title has-text-centered">Next dryer available in</p>
 
-    
+            <p class="has-text-centered" style="font-size:48pt">6 mins</p>
+          </div>
+        </div>
+        <div class="tile is-3"></div>
+      </div>
+    </section>
+
+    <div class="content">
+        <a class="button is-large is-fullwidth">Large</a>
+    </div>
+
     <section class="section">
+      <div class="columns is-gapless">
+          <div class="column"></div>
+        <div class="column">
+            <div class="container">
+          <table class="table nofilter">
+            <thead>
+              <tr>
+                <th>Machine</th>
+                <!-- <th><abbr title="Machine Number">No.</abbr></th> -->
+                <th>Time Remaining</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Washer 1</td>
+                <td class="has-text-success">Available</td>
+              </tr>
+              <tr>
+                <td>Washer #2</td>
+                <td class="has-text-danger">30m</td>
+              </tr>
+              <tr>
+                <td>Washer #3</td>
+                <td><progress class="progress is-primary" max="100"></progress></td>
+              </tr>
+              <tr>
+                <td>Washer #4</td>
+                <td><progress class="progress is-primary" max="100"></progress></td>
+              </tr>
+              <tr>
+                <td>Washer #5</td>
 
+                <td class="has-text-success">Available</td>
+              </tr>
+              <tr>
+                <td>Washer #6</td>
 
+                <td class="has-text-success">Available</td>
+              </tr>
+              <tr>
+                <td>Washer #7</td>
 
-      <div class="container is-centered">
-        <table class="table is-fullwidth">
-          <thead>
-            <tr>
-              <th>Type</th>
-              <th><abbr title="Machine Number">No.</abbr></th>
-              <th>Time Remaining</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Washer</td>
-              <td>1</td>
-              <td>Available</td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>2</td>
-              <td>30m</td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>3</td>
-              <td><progress class="progress is-primary" max="100">15%</progress></td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>3</td>
-              <td><progress class="progress is-primary" max="100">15%</progress></td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>1</td>
-              <td>Available</td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>1</td>
-              <td>Available</td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>1</td>
-              <td>Available</td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>1</td>
-              <td>Available</td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>1</td>
-              <td>Available</td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>1</td>
-              <td>Available</td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>1</td>
-              <td>Available</td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>1</td>
-              <td>Available</td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>1</td>
-              <td>Available</td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>1</td>
-              <td>Available</td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>1</td>
-              <td>Available</td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>1</td>
-              <td>Available</td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>1</td>
-              <td>Available</td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>1</td>
-              <td>Available</td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>1</td>
-              <td>Available</td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>1</td>
-              <td>Available</td>
-            </tr>
-            <tr>
-              <td>Washer</td>
-              <td>1</td>
-              <td>Available</td>
-            </tr>
-          </tbody>
-        </table>
+                <td class="has-text-success">Available</td>
+              </tr>
+              <tr>
+                <td>Washer #8</td>
+
+                <td class="has-text-success">Available</td>
+              </tr>
+              <tr>
+                <td>Washer #9</td>
+
+                <td class="has-text-success">Available</td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+        <div class="column">
+            <div class="container">
+          <table class="table is-striped">
+            <thead>
+              <tr>
+                <th>Machine</th>
+                <!-- <th><abbr title="Machine Number">No.</abbr></th> -->
+                <th>Time Remaining</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Dryer #1</td>
+
+                <td class="has-text-danger">40m</td>
+              </tr>
+              <tr>
+                <td>Dryer #2</td>
+
+                <td class="has-text-yellow">10m</td>
+              </tr>
+              <tr>
+                <td>Dryer #3</td>
+
+                <td class="has-text-danger">35m</td>
+              </tr>
+              <tr>
+                <td>Dryer #4</td>
+
+                <td class="has-text-yellow">6m</td>
+              </tr>
+              <tr>
+                <td>Dryer #5</td>
+
+                <td><progress class="progress is-primary" max="100"></progress></td>
+              </tr>
+              <tr>
+                <td>Dryer #6</td>
+
+                <td class="has-text-danger">42m</td>
+              </tr>
+              <tr>
+                <td>Dryer #7</td>
+
+                <td class="has-text-danger">23m</td>
+              </tr>
+              <tr>
+                <td>Dryer #8</td>
+
+                <td><progress class="progress is-primary" max="100"></progress></td>
+              </tr>
+              <tr>
+                <td>Dryer #9</td>
+
+                <td class="has-text-yellow">11m</td>
+              </tr>
+              <tr>
+                <td>Dryer #10</td>
+
+                <td><progress class="progress is-primary" max="100"></progress></td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+        <div class="column"></div>
       </div>
     </section>
 
