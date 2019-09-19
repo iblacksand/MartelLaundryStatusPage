@@ -6,11 +6,11 @@ $('[hasemails]').each((i, el) => {
 toggleon = true;
 function colorblind(){
     if(toggleon){
-    $('body').css({"-webkit-filter": "grayscale(1)", "-moz-filter": "grayscale(1)", "-ms-filter":"grayscale(1)", "filter": "grayscale(1)", "color": "black"});
+    $('#colorblock').css({"-webkit-filter": "grayscale(1)", "-moz-filter": "grayscale(1)", "-ms-filter":"grayscale(1)", "filter": "grayscale(1)", "color": "black"});
     toggleon = false;
     }
     else{
-        $('body').removeAttr('style');
+        $('#colorblock').removeAttr('style');
         toggleon = true;
     }
 }
