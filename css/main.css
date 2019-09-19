@@ -11,3 +11,6 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
+.has-text-yellow{
+  color: #cfba02;
+}
