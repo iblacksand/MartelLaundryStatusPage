@@ -10,10 +10,10 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
-
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/bulma.min.css">
+    <link rel="stylesheet" href="css/bulma.css">
 
     <meta name="theme-color" content="#fafafa">
   </head>
@@ -44,14 +44,17 @@
           <a class="navbar-item" href="./">
             Status Page
           </a>
-          <a class="navbar-item" href="./Contact.html">
+          <a class="navbar-item" href="https://forms.gle/GyeckkLeuF7GefPf9" target="_blank">
+            Report Broken Machine
+          </a>
+          <a class="navbar-item" href="https://forms.gle/X48LWwXaS4JSKRex9" target="_blank">
             Contact Us
           </a>
         </div>
       </div>
       <div class="navbar-end">
           <div class="navbar-item">
-              <a id="colbutton" class="button is-black is-inverted" onclick="colorblind()">
+              <a id="colbutton" class="button is-dark is-inverted is-outlined" onclick="colorblind()">
                 <strong>Toggle Color-Blindness Mode</strong>
               </a>
             </div>
@@ -115,12 +118,19 @@
       </div>
     </section>
 
-    <div class="content">
-        <a class="button is-large is-fullwidth">Large</a>
+    <div id="detaildiv" class="content">
+        <a id="detailbutton" class="button is-white is-large is-fullwidth" onclick="detailbuttonpress()">
+          <span class="icon is-small">
+            <i class="fas fa-chevron-down"></i>
+          </span>
+          <span>Hide Details</span>
+        </a>
     </div>
 
+
+<strong>
     <section class="section">
-      <div class="columns is-gapless">
+      <div id="tablecols" class="columns is-gapless">
           <div class="column"></div>
         <div class="column">
             <div class="container">
@@ -247,7 +257,7 @@
       </div>
     </section>
 
-
+</strong>
     <script src="js/vendor/modernizr-3.7.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
