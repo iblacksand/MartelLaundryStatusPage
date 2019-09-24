@@ -1,6 +1,6 @@
 $('[hasemails]').each((i, el) => {
     h = $(el).html();
-    h = h.replace("***emails***","jme10@rice.edu");
+    h = h.replace("***emails***","jme" + "10" + "@" +"r" +"ice" + "." + "edu");
     $(el).html(h);
 })
 toggleon = true;
