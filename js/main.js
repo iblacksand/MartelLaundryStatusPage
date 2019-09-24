@@ -18,7 +18,6 @@ function colorblind(){
 tohidetables = true;
 
 function detailbuttonpress(){
-    console.log('Button pressed');
     if(tohidetables){
         tohidetables = false;
         $("#detailbutton").html('<span class="icon is-small"><i class="fas fa-chevron-up"></i></span><span>Show Details</span>');
