@@ -18,10 +18,10 @@ const io = socketIO(server);
 
 //Global variables
 var haveErrors = false;
-var workingWashers = 0;
-var brokenWashers = 0;
-var workingDryers = 0;
-var brokenDryers = 0;
+var availableWashers = 0;
+var busyWashers = 0;
+var availableDryers = 0;
+var busyDryers = 0;
 var washers = [];
 var dryers = [];
 
@@ -30,10 +30,18 @@ io.on('connection', (socket)=>{
     socket.emit('connected', {});
     socket.on('amUser', () =>{
         // Send initial table data
-        socket.emit('washerTable', {data: generateWasherTables()});
-        socket.emit('dryerTable', {data: generateDryerTables()})
+        socket.emit('updateClient', {washerTable: generateWasherTables(), dryerTable: generateDryerTables(), availableWashers: availableWashers, busyWashers: busyWashers, availableDryers: availableWashers, busyDryers: busyDryers});
     });
-    socket.on('am')
+    socket.on('amStatusRelay', (data) => {
+        washers = data.washers;
+        dryers = data.dryers;
+        //When socket has an update
+        socket.on('updateServer', (data)=>{
+
+            // Update the clients
+            io.emit('updateClient', {washerTable: generateWasherTables(), dryerTable: generateDryerTables(), availableWashers: availableWashers, busyWashers: busyWashers, availableDryers: availableWashers, busyDryers: busyDryers})
+        })
+    });
 });
 
 function availableStatus(){
