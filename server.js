@@ -33,6 +33,7 @@ io.on('connection', (socket)=>{
         socket.emit('washerTable', {data: generateWasherTables()});
         socket.emit('dryerTable', {data: generateDryerTables()})
     });
+    socket.on('am')
 });
 
 function availableStatus(){
