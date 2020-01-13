@@ -77,7 +77,7 @@ function generateWasherTables(){
                 break;
             case 1:
                 timeData = timeRemainingStatus(washers[i].timeRemaining);
-                break;
+                break;  
             case -1:
                 timeData = unknownStatus();
                 break;

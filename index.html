@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/bulma.css">
-
+    <script src='/socket.io/socket.io.js'></script>
     <meta name="theme-color" content="#fafafa">
   </head>
 
@@ -43,12 +43,15 @@
           <a class="navbar-item" href="./">
             Status Page
           </a>
-          <a class="navbar-item" href="https://forms.gle/GyeckkLeuF7GefPf9" target="_blank">
+          <a class="navbar-item" href="https://docs.google.com/forms/d/e/1FAIpQLSfBr0IFZWBKIHEA_c767jn5JE56EeH3S5yTFn-7DYZH6iZ5dA/viewform?usp=sf_link" target="_blank">
+            Feedback
+          </a>
+          <!-- <a class="navbar-item" href="https://forms.gle/GyeckkLeuF7GefPf9" target="_blank">
             Report Broken Machine
           </a>
           <a class="navbar-item" href="https://forms.gle/X48LWwXaS4JSKRex9" target="_blank">
             Contact Us
-          </a>
+          </a> -->
         </div>
       </div>
       <div class="navbar-end">
@@ -217,7 +220,7 @@
               <tr>
                 <td>Dryer #5</td>
 
-                <td><progress class="progress is-primary" max="100"></progress></td>
+                <td><progress title="Buffering" class="progress is-primary" max="100"></progress></td>
               </tr>
               <tr>
                 <td>Dryer #6</td>
@@ -232,7 +235,7 @@
               <tr>
                 <td>Dryer #8</td>
 
-                <td><progress class="progress is-primary" max="100"></progress></td>
+                <td><progress title="Buffering" class="progress is-primary" max="100"></progress></td>
               </tr>
               <tr>
                 <td>Dryer #9</td>
@@ -242,7 +245,7 @@
               <tr>
                 <td>Dryer #10</td>
 
-                <td><progress class="progress is-primary" max="100"></progress></td>
+                <td><progress title="Buffering" class="progress is-primary" max="100"></progress></td>
               </tr>
             </tbody>
           </table>
@@ -302,6 +305,7 @@
 
       });
     </script>
+    <script src="js/StatusPage.js"></script>
 </div>
   </body>
 
