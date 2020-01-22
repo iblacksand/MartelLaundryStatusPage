@@ -12,7 +12,8 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/bulma.css">
+    <!-- <link rel="stylesheet" href="css/bulma.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
     <script src='/socket.io/socket.io.js'></script>
     <meta name="theme-color" content="#fafafa">
   </head>
@@ -53,15 +54,13 @@
             Contact Us
           </a> -->
         </div>
-      </div>
-      <div class="navbar-end">
-          <div class="navbar-item">
-              <a id="colbutton" class="button is-dark is-inverted is-outlined" onclick="colorblind()">
-                <strong>Toggle Color-Blindness Mode</strong>
-              </a>
-            </div>
-          </div>
+        <div class="navbar-item">
+          <a id="colbutton" class="button is-inverted is-outlined" onclick="colorblind()">
+            <strong>Toggle Color-Blindness Mode</strong>
+          </a>
         </div>
+      </div>
+      </div>
     </nav>
 <div id="colorblock">
     <section class="section">
