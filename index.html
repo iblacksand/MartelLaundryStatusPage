@@ -9,6 +9,7 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="apple-touch-icon" href="icon.png">
     <!-- Place favicon.ico in the root directory -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
@@ -104,23 +105,22 @@
         <div class="tile is-parent is-3 is-vertical">
           <div class="tile is-child notification is-primary">
             <p class="title has-text-centered">Washers available</p>
-            <p class="has-text-centered" style="font-size:48pt">6</p>
+            <p id="wa-av" class="has-text-centered" style="font-size:48pt">6</p>
           </div>
           <div class="tile is-child notification is-warning">
             <p class="title has-text-centered">Next washer available in</p>
 
-            <p class="has-text-centered" style="font-size:48pt">0 min</p>
+            <p id="wa-next" class="has-text-centered" style="font-size:48pt">0 min</p>
           </div>
         </div>
         <div class="tile is-parent is-3 is-vertical">
           <div class="tile is-child notification is-info">
             <p class="title has-text-centered">Dryers available</p>
-            <p class="has-text-centered" style="font-size:48pt">0</p>
+            <p id="dy-av" class="has-text-centered" style="font-size:48pt">0</p>
           </div>
           <div class="tile is-child notification is-success">
             <p class="title has-text-centered">Next dryer available in</p>
-
-            <p class="has-text-centered" style="font-size:48pt">6 mins</p>
+            <p id="dy-next" class="has-text-centered" style="font-size:48pt">6 mins</p>
           </div>  
         </div>
         <div class="tile is-3"></div>
@@ -151,7 +151,7 @@
                 <th>Time Remaining</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="washer-table-body">
               <tr>
                 <td>Washer #1</td>
                 <td class="has-text-success">Available</td>
@@ -206,7 +206,7 @@
                 <th>Time Remaining</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody id="dryer-table-body">
               <tr>
                 <td>Dryer #1</td>
 
