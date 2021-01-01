@@ -32,17 +32,32 @@ io.on('connection', (socket)=>{
         // Send initial table data
         socket.emit('updateClient', {washerTable: generateWasherTables(), dryerTable: generateDryerTables(), availableWashers: availableWashers, nextWasher: nextWasher, availableDryers: availableDryers, nextDryer: nextDryer});
     });
-    socket.on('amStatusRelay', (data) => {
-        washers = data.washers;
-        dryers = data.dryers;
+    socket.on('amStatusRelay', () => {
         //When socket has an update
         socket.on('updateServer', (data)=>{
-
+            washers = data.washers.split(',');
+            dryers = data.dryers.split(',');
+            availableWashers = availableMachines(washers);
+            nextWasher = Array.min(washers);
+            availableDryers = availableMachines(dryers);
+            nextDryer = Array.min(dryers);
             // Update the clients
             io.emit('updateClient', {washerTable: generateWasherTables(), dryerTable: generateDryerTables(), availableWashers: availableWashers, nextWasher: nextWasher, availableDryers: availableDryers, nextDryer:nextDryer})
         })
     });
 });
+
+Array.min = function( array ){
+    return Math.min.apply( Math, array );
+};
+
+function availableMachines(m){
+    let av = 0;
+    for(let i = 0; i < m.length; i++){
+        av += m[i] ==  0; // add if not equal to 0
+    }
+    return av;
+}
 
 function availableStatus(){
     return '<td class="has-text-success">Available</td>';
@@ -51,7 +66,7 @@ function availableStatus(){
 function timeRemainingStatus(t){
     let color = 'has-text-danger';
     if(t < 16) color = 'has-text-yellow';
-    return '<td class="' + color + '">' + t + 'm</td>';
+    return '<td class="' + color + '">' + t + 'm</td>\n';
 }
 
 function unknownStatus(){
@@ -61,22 +76,19 @@ function unknownStatus(){
 function generateWasherTables(){
     var tableHTML = '';
     for(let i = 0; i < washers.length; i++){
-        var washerData = '<tr><td>Washer #' + (i+1) + '</td>'
-        let d = washer[i].status;
+        var washerData = '<tr><td>Washer #' + (i+1) + '</td>\n'
+        let d = washers[i];
         var timeData =  "";
         switch (d) {
-            case 0:
+            case "0":
                 timeData = availableStatus();
                 break;
-            case 1:
-                timeData = timeRemainingStatus(washers[i].timeRemaining);
-                break;  
-            case -1:
+            case "-1":
                 timeData = unknownStatus();
                 break;
             default:
-                timeData = unknownStatus();
-                break;
+                timeData = timeRemainingStatus(washers[i]);
+                break; 
         }
         washerData += timeData + '</tr>';
         tableHTML += washerData + '\n';
@@ -89,23 +101,20 @@ function generateDryerTables(){
     var tableHTML = '';
     for(let i = 0; i < dryers.length; i++){
         var dryerData = '<tr><td>Dryer #' + (i+1) + '</td>'
-        let d = dryers[i].status;
+        let d = dryers[i];
         var timeData =  "";
         switch (d) {
-            case 0:
+            case "0":
                 timeData = availableStatus();
                 break;
-            case 1:
-                timeData = timeRemainingStatus(dryers[i].timeRemaining);
-                break;
-            case -1:
+            case "-1":
                 timeData = unknownStatus();
                 break;
             default:
-                timeData = unknownStatus();
+                timeData = timeRemainingStatus(dryers[i]);
                 break;
         }
-        dryerData += timeData + '</tr>';
+        dryerData += timeData + '</tr>\n';
         tableHTML += dryerData + '\n';
     }
     return tableHTML;
