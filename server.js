@@ -35,21 +35,27 @@ io.on('connection', (socket)=>{
     socket.on('amStatusRelay', () => {
         //When socket has an update
         socket.on('updateServer', (data)=>{
-            washers = data.washers.split(',');
-            dryers = data.dryers.split(',');
+            washers = data.washers.split(',').map(Function.prototype.call, String.prototype.trim);
+            dryers = data.dryers.split(',').map(Function.prototype.call, String.prototype.trim);
             availableWashers = availableMachines(washers);
-            nextWasher = Array.min(washers);
+            nextWasher = nextMachine(washers);
             availableDryers = availableMachines(dryers);
-            nextDryer = Array.min(dryers);
+            nextDryer = nextMachine(dryers);
             // Update the clients
             io.emit('updateClient', {washerTable: generateWasherTables(), dryerTable: generateDryerTables(), availableWashers: availableWashers, nextWasher: nextWasher, availableDryers: availableDryers, nextDryer:nextDryer})
         })
     });
 });
 
-Array.min = function( array ){
-    return Math.min.apply( Math, array );
-};
+function nextMachine(m){
+    let val = Number.MAX_VALUE;
+    for(let i = 0; i < m.length; i++){
+        let v = parseInt(m[i]);
+        if (v >= 0 && v < val) val = v;
+    }
+    if(Number.MAX_VALUE == val) val = "ERROR";
+    return val;
+}
 
 function availableMachines(m){
     let av = 0;
@@ -70,7 +76,7 @@ function timeRemainingStatus(t){
 }
 
 function unknownStatus(){
-
+    return '<td style="color:purple">Status Unknown</td>'
 }
 
 function generateWasherTables(){
