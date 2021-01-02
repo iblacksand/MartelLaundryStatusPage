@@ -41,4 +41,4 @@ npm start
 
 By default, this will start the server on `localhost:3000`. First open `localhost:3000/admin/`. Login using your admin credentials(see [Set-up](#set-up) from above). By default, the username is `username`, and the password is `password`. Here you can enter in sample CSV strings that will act like the hardware server. 
 
-Then you can open [localhost:3000](localhost:3000). This will show the website that will be available to the user. You can change the data on the admin site and the main page will change.
+Then you can open `localhost:3000`. This will show the website that will be available to the user. You can change the data on the admin site and the main page will change.
