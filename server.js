@@ -1,6 +1,7 @@
 'use strict';
 //Initialize Server
 const express = require('express');
+const auth = require('./auth');
 const socketIO = require('socket.io');
 const path = require('path');
 var router = express.Router();
@@ -9,8 +10,14 @@ const PORT = process.env.PORT || 3000;
 const INDEX = path.join(__dirname, 'index.html');
 const HOST = path.join(__dirname, 'host.html');
 var users = [];
+
 express().use(express.static('public'));
-app.use('/', express.static(__dirname + '/'));
+app.use('/', express.static(__dirname + '/status/'));
+app.use('/js', express.static('js'));
+app.use('/css', express.static('css'));
+app.use('/img', express.static('img'));
+app.use(auth);
+app.use('/admin', express.static('admin'));
 const server = app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
 //Start the sockets

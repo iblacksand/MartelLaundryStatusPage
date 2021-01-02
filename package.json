@@ -13,6 +13,7 @@
   "author": "John Elizarraras",
   "license": "ISC",
   "dependencies": {
+    "basic-auth": "^2.0.1",
     "express": "^4.15.2",
     "socket.io": "^2.3.0"
   },
@@ -20,7 +21,7 @@
     "bulma": "^0.7.5",
     "install": "^0.13.0",
     "node-sass": "^4.13.1",
-    "npm": "^6.13.6"
+    "npm": "^7.3.0"
   },
   "directories": {
     "doc": "doc"
