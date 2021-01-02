@@ -20,12 +20,12 @@ tohidetables = true; // to hide tables of the washer/dryer status on button pres
 function detailbuttonpress(){
     if(tohidetables){ // will hide the tables
         tohidetables = false; 
-        $("#detailbutton").html('<span class="icon is-small"><i class="fas fa-chevron-up"></i></span><span>Show Details</span>');
+        $("#detailbutton").html('<span class="icon is-small"><i class="fas fa-chevron-down"></i></span><span>Show Details</span>');
         $("#tablecols").hide();
     }
     else{ // show the tables
         tohidetables = true;
-        $("#detailbutton").html('<span class="icon is-small"><i class="fas fa-chevron-down"></i></span><span>Hide Details</span>');
+        $("#detailbutton").html('<span class="icon is-small"><i class="fas fa-chevron-up"></i></span><span>Hide Details</span>');
         $("#tablecols").show();
     }
 }
