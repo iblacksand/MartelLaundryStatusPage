@@ -14,6 +14,7 @@ var users = [];
 express().use(express.static('public'));
 app.use('/', express.static(__dirname + '/status/'));
 app.use('/js', express.static('js'));
+app.use('/', express.static('public'));
 app.use('/css', express.static('css'));
 app.use('/img', express.static('img'));
 app.use(auth);
