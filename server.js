@@ -1,7 +1,7 @@
 'use strict';
 //Initialize Server
 const express = require('express');
-const auth = require('./auth');
+const auth = require('./auth'); // file that contains the passwords
 const socketIO = require('socket.io');
 const path = require('path');
 var router = express.Router();
@@ -11,6 +11,7 @@ const INDEX = path.join(__dirname, 'index.html');
 const HOST = path.join(__dirname, 'host.html');
 var users = [];
 
+// Add all of the appropriate paths
 express().use(express.static('public'));
 app.use('/', express.static(__dirname + '/status/'));
 app.use('/js', express.static('js'));
@@ -43,6 +44,7 @@ io.on('connection', (socket)=>{
     socket.on('amStatusRelay', () => {
         //When socket has an update
         socket.on('updateServer', (data)=>{
+            // Grab all of the data
             washers = data.washers.split(',').map(Function.prototype.call, String.prototype.trim);
             dryers = data.dryers.split(',').map(Function.prototype.call, String.prototype.trim);
             availableWashers = availableMachines(washers);
@@ -55,6 +57,7 @@ io.on('connection', (socket)=>{
     });
 });
 
+// Find the machine with the lowest time remaining and != to 0
 function nextMachine(m){
     let val = Number.MAX_VALUE;
     for(let i = 0; i < m.length; i++){
@@ -65,6 +68,7 @@ function nextMachine(m){
     return val;
 }
 
+// Find the number of machines with 0 minutes remaining on the timer
 function availableMachines(m){
     let av = 0;
     for(let i = 0; i < m.length; i++){
@@ -73,27 +77,31 @@ function availableMachines(m){
     return av;
 }
 
+// Generate row corresponding to available status
 function availableStatus(){
     return '<td class="has-text-success">Available</td>';
 }
 
+// Generate the correct time remaining status for the machine
 function timeRemainingStatus(t){
     let color = 'has-text-danger';
     if(t < 16) color = 'has-text-yellow';
     return '<td class="' + color + '">' + t + 'm</td>\n';
 }
 
+// Generate row corresponding to unknown status
 function unknownStatus(){
     return '<td style="color:purple">Status Unknown</td>'
 }
 
+// Generate tables for the washers
 function generateWasherTables(){
-    var tableHTML = '';
+    var tableHTML = ''; // html for the table
     for(let i = 0; i < washers.length; i++){
         var washerData = '<tr><td>Washer #' + (i+1) + '</td>\n'
         let d = washers[i];
         var timeData =  "";
-        switch (d) {
+        switch (d) { // find appropriate status
             case "0":
                 timeData = availableStatus();
                 break;
@@ -110,14 +118,14 @@ function generateWasherTables(){
     return tableHTML;
 }
 
-
+// Generate tables for the dryers
 function generateDryerTables(){
-    var tableHTML = '';
+    var tableHTML = '';// html for the table
     for(let i = 0; i < dryers.length; i++){
         var dryerData = '<tr><td>Dryer #' + (i+1) + '</td>'
         let d = dryers[i];
         var timeData =  "";
-        switch (d) {
+        switch (d) {// find appropriate status
             case "0":
                 timeData = availableStatus();
                 break;

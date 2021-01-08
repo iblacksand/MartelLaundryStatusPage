@@ -4,7 +4,9 @@ $('[hasemails]').each((i, el) => {
     $(el).html(h);
 }) // replaces fields with [hasemails] with real emails so bots can't scrape emails from the website and spam it
 toggleon = true; // true if button will activate filter
-function colorblind(){ // changes the website from color to black and white
+
+// Affects the grayscale filter on the colorblock div according to the needed sedding
+function colorblind(){ 
     if(toggleon){
     $('#colorblock').css({"-webkit-filter": "grayscale(1)", "-moz-filter": "grayscale(1)", "-ms-filter":"grayscale(1)", "filter": "grayscale(1)", "color": "black"}); // changes all of the contenst under colorblock div to be under a b&w filter
     toggleon = false;
@@ -17,6 +19,7 @@ function colorblind(){ // changes the website from color to black and white
 
 tohidetables = true; // to hide tables of the washer/dryer status on button press
 
+// Function that hides the detailed tables and changes the icons to the appropriate setting
 function detailbuttonpress(){
     if(tohidetables){ // will hide the tables
         tohidetables = false; 
