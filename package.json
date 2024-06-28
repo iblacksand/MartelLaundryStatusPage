@@ -14,7 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "basic-auth": "^2.0.1",
-    "express": "^4.15.2",
+    "express": "^4.19.2",
     "express-rate-limit": "^6.3.0",
     "i": "^0.3.7",
     "socket.io": "^4.6.1"
