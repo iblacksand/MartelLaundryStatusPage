@@ -17,7 +17,7 @@
     "express": "^4.15.2",
     "express-rate-limit": "^6.3.0",
     "i": "^0.3.7",
-    "socket.io": "^4.6.1"
+    "socket.io": "^4.6.2"
   },
   "devDependencies": {
     "bulma": "^0.7.5",
